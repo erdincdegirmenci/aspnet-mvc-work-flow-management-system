@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div id="piechart_3d" style=" height: 500px;" class="w-100;"></div>
+
+    </div>
+    <div class="col-md-6">
+        <div id="piechart" style=" height: 500px;" class="w-100"></div>
+    </div>
+</div>
+
+
+@section JavaScript
+{
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            let enCokIsTamamlayan = [['Personel Adı', 'Görev Sayisi']];
+
+            $.ajax({
+                type: "Get",
+                url: "./Graphic/EnCokTamamlayan",
+                async: false,
+                success: function (data) {
+                    let gelenObje = jQuery.parseJSON(data);
+                    $.each(gelenObje, (index, value) => {
+                        enCokIsTamamlayan.push([value.Name, value.DutyNumber]);
+                    });
+                }
+            })
+            var data = google.visualization.arrayToDataTable(enCokIsTamamlayan);
+
+            var options = {
+                title: 'En Çok İş Tamamlayan 5 Personel',
+                backgroundColor: '#272b30',
+                titleTextStyle: { color: '#FFF' },
+                legendTextStyle: { color: '#FFF' },
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart2);
+
+        function drawChart2() {
+
+            let EnCokisteCalisan = [['Personel Adı', 'Görev Sayisi']];
+
+            $.ajax({
+                type: "Get",
+                url: "./Graphic/EnCokCalisan",
+                async: false,
+                success: function (data) {
+                    let gelenObje2 = jQuery.parseJSON(data);
+                    $.each(gelenObje2, (index, value) => {
+                        EnCokisteCalisan.push([value.Name, value.DutyNumber]);
+                    });
+                }
+            })
+            var data = google.visualization.arrayToDataTable(EnCokisteCalisan);
+
+            var options = {
+                title: 'Şuan Çalışan Personel Sayısı',
+                is3D: true,
+                backgroundColor: '#272b30',
+                titleTextStyle: { color: '#FFF' },
+                legendTextStyle: { color: '#FFF' },
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+    </script>
+} 

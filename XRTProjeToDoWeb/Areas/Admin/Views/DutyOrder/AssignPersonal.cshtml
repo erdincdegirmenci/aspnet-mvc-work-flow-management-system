@@ -1,0 +1,62 @@
+﻿@*@model PersonalAssignListViewModel*@
+@model PersonalAssignListDto
+@{
+    ViewData["Title"] = "AssignPersonal";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row mt-2">
+
+    <div class="col-md-4">
+        <div class="card border-info shadow">
+            <div class="card-header">
+                <h4 class="text-center lead pt-2 ">Görev Bilgileri</h4>
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">@Model.Duty.Ad</h5>
+                <p class="card-text">@Model.Duty.Aciklama</p>
+                <p class="card-text">
+                    <strong>Aciliyet Durumu:</strong><span class="badge badge-info">@Model.Duty.Urgency.Description</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+
+        <div class="card border-info mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Personel Bilgileri</h5>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="~/img/@Model.AppUser.Picture" class="card-img " style="height:10rem!important" alt="@Model.AppUser.Name">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.AppUser.Name @Model.AppUser.SurName</h5>
+                        <p class="card-text"><GetDutyAppUserId app-user-id="@Model.AppUser.Id"></GetDutyAppUserId></p>
+                        <p class="card-text">
+                            <small class="text-muted">@Model.AppUser.Email</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <form asp-action="AssignStaff" method="post">
+            <p class="lead text-center">
+                Yukarıdaki Göreve İlgili Personel Atanacaktır. Bu İşlemi Gerçekleştirmek İstediğinizden Emin Misiniz?
+            </p>
+            <div class="form-group text-center">
+                <a asp-action="AssignStaff" asp-route-id="@Model.Duty.Id" class=" btn btn-warning"><i class="fas fa-chevron-circle-left mr-2"></i>Vazgeç</a>
+                <input type="hidden" name="PersonalId" value="@Model.AppUser.Id" />
+                <input type="hidden" name="DutyId" value="@Model.Duty.Id" />
+                <button type="submit" class=" btn btn-info "><i class="fas fa-check mr-2"></i>Görevlendir</button>
+            </div>
+        </form>
+    </div>
+</div>
+

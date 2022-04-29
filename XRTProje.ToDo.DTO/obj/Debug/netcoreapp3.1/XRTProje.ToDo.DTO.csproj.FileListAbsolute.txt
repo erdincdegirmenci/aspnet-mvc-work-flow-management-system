@@ -1,0 +1,12 @@
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\bin\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.deps.json
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\bin\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.dll
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\bin\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.pdb
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\obj\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.csprojAssemblyReference.cache
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\obj\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\obj\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.AssemblyInfoInputs.cache
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\obj\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.AssemblyInfo.cs
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\obj\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.dll
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\obj\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.pdb
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\bin\Debug\netcoreapp3.1\YSKProje.ToDo.Entities.dll
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\bin\Debug\netcoreapp3.1\YSKProje.ToDo.Entities.pdb
+C:\Users\Erdinc\Desktop\ASP.NETCoreMvcApi\UdemyToDoPure\UdemyToDo\XRTProje.ToDo.DTO\obj\Debug\netcoreapp3.1\XRTProje.ToDo.DTO.csproj.CopyComplete

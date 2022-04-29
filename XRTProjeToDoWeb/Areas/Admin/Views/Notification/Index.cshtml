@@ -1,0 +1,30 @@
+﻿@*@model List<NotificationListViewModel>*@
+@model List<NotificationListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@if (Model.Count > 0)
+{
+    @foreach (var notifications in Model)
+    {
+        <div class="alert alert-primary py-3 my-2 border border-info">
+            <form asp-action="Index" method="post" class="my-1">
+                <p class="lead">
+                    <input type="hidden" name="id" value="@notifications.Id" />
+                    @notifications.Aciklama
+                    <button type="submit" class="btn btn-light btn-sm float-right">Okundu</button>
+                </p>
+            </form>
+        </div>
+
+    }
+}
+else
+{
+    <div class="alert alert-primary py-3 my-2 border border-info">
+        <p class="lead text-center">
+            Okunmamış Bildiriminiz Bulunmamaktadır.
+        </p>
+    </div>
+}

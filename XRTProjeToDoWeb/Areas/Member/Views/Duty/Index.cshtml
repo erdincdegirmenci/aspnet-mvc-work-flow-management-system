@@ -1,0 +1,56 @@
+﻿@*@model List<DutyListAllViewModel>*@
+@model List<DutyListAllDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+    int index = 0;
+}
+
+
+@foreach (var duty in Model)
+{
+    index++;
+    <div class="card my-1">
+        <h5 class="card-header">@duty.Ad</h5>
+        <div class="card-body">
+            <h5 class="card-title"> <span class="text-danger">Aciliyet Durumu : </span>@duty.Urgency.Description</h5>
+            <p class="card-text">@duty.Aciklama</p>
+
+            <p class="text-right">
+                @if (duty.Reports.Count > 0)
+                {
+                    <a class="btn btn-light btn-sm" data-toggle="collapse" href="#collapseExample-@index" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Raporlara Git<i class="fas fa-caret-down ml-2"></i>
+                        <span class="badge badge-dark">@duty.Reports.Count</span>
+                    </a>
+                }
+            </p>
+
+            <div class="collapse" id="collapseExample-@index">
+                <table class="table table-hover table-bordered table-sm">
+                    <tr>
+                        <th>Tanım</th>
+                        <th>Detay</th>
+                    </tr>
+                    @foreach (var rapor in duty.Reports)
+                    {
+                        <tr>
+                            <td>@rapor.Description</td>
+                            <td>@rapor.Detail</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+}
+<nav aria-label="Page navigation example" class="float-right">
+    <ul class="pagination">
+        @for (int i = 1; i <= ViewBag.ToplamSayfa; i++)
+        {
+            <li class="page-item @(ViewBag.AktifSayfa==i?"active":"")">
+                <a class="page-link" asp-action="Index" asp-route-aktifSayfa="@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>
